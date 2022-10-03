@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Онлайн магазин
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+            <h1 class="display-4 fw-normal">Товары</h1>
+            <p class="fs-5 text-muted">На этой странице вы можете выбрать для себя товар или подписку по оптимальной цене</p>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+            
+            {% for el in data %}
+            <div class="col">
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-header">
+                        <h4 class="my-0 fw-normal">{{ el.title }}</h4>
+                    </div>
+                    <div class="card-body">
+                        <h1 class="card-title pricing-card-title">{{ el.price }}<small class="text-muted fw-light"> рублей</small></h1>
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li>Высокая защита от взлома</li>
+                            <li>До 10 гб памяти в облаке</li>
+                            <li>Добавление личного контента</li>
+                            <li>Поддержка 24\7</li>
+                        </ul>
+                        <a href="/buy/{{ el.id }}" class="w-100 btn btn-lg btn-outline-primary">Купить товар</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>    
+    </div>
+{% endblock %}
+

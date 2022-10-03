@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+    <!-- Шапка сатйа -->
+    <div class="container">
+        <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+            <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+                <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
+                <span class="fs-4">Онлайн магазин</span>
+            </a>
+            <ul class="nav nav-pills">
+                <li class="nav-item"><a href="/" class="nav-link">Главная</a></li>
+                <li class="nav-item"><a href="/about" class="nav-link">О магазине</a></li>
+                <li cclass="nav-item"><a href="/create" class="nav-link active" aria-current="page">Добавить товар</a></li>
+            </ul>
+        </header>
+    </div>
+
+    <!-- Тело сайта -->
+    {% block body %}
+    {% endblock %}
+
+    <!-- Футер -->
+    <div class="container">
+        <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+            <div class="col-md-4 d-flex align-items-center">
+                <a href="/" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
+                    <svg class="bi" width="30" height="24"><use xlink:href="#bootstrap"></use></svg>
+                </a>
+                <span class="text-muted">© 2022 Онлайн магазин, Inc</span>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
